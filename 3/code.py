@@ -12,7 +12,7 @@ def navigate(data, begin, step):
     x = 0
     y = 0
     i = begin
-    
+
     while i < len(data) :
         # get char and increment
         a_char = data[i]
@@ -29,11 +29,10 @@ def navigate(data, begin, step):
             y -= 1
         else:
             print a_char
-        
+
         # yield tuple
         yield (x,y)
 
-    
 def create_map(data, begin, step):
     d = Counter({})
     for key in navigate(data, begin, step):

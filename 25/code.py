@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Jan  5 13:24:05 2016
 
-@author: Dick84
-"""
 import logging
 
 # Logger configuration:
@@ -18,7 +14,6 @@ MODULO = 33554393
 
 second_code = FIRST_CODE * MULT_VALUE % MODULO
 #print (second_code)
-
 
 # total = 2 (1,1)
 # total = 3 (2,1), (1,2)

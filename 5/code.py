@@ -20,35 +20,34 @@ def contains_three_vowels(word):
 def contains_double_letter(word):
     pattern = r"(.)\1"
     return re.search(pattern, word)
-    
+
 @boolean_regex
 def has_forbidden_string(word):
     # ab, cd, pq, or xy
     pattern = r"(ab)|(cd)|(pq)|(xy)"
     return re.search(pattern, word)
-    
+
 @boolean_regex
 def contains_double_pair(word):
     pattern = r"(..).*\1"
     return re.search(pattern, word)
-    
+
 @boolean_regex
 def contains_double_letter_separated(word):
     pattern = r"(.).\1"
     return re.search(pattern, word)
-        
 
 def is_nice_word(word):
     is_nice = contains_three_vowels(word)   \
         & contains_double_letter(word)      \
         & (not has_forbidden_string(word))
     return is_nice
-    
+
 def is_nice_word_part_deux(word):
     is_nice = contains_double_pair(word)   \
         & contains_double_letter_separated(word)
     return is_nice
-    
+
 print contains_double_pair("ugknbfddgicrmopn")
 print contains_double_pair("aaa")
 print contains_double_pair("xyxy")
@@ -72,4 +71,4 @@ print nice_words_count
 # print 
 # print contains_three_vowels("aeb")
 # print contains_three_vowels("dvszwmarrgswjxmb")
-    
+

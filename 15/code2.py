@@ -1,9 +1,8 @@
 import re
 
-
 with open('input.txt', 'r') as f:
     lines = f.readlines()
-    
+
 prop = dict([])
 for line in lines:
     pattern = r'[ ,]+'
@@ -20,7 +19,6 @@ print(prop)
 #[0, 0, -2, 2, 8],
 #]
 
-
 def get_score(recipe):
     c = d = f = t = total = 0
     for n in recipe.keys():
@@ -34,7 +32,7 @@ def get_score(recipe):
     t = max(t, 0)
     total = c * d * f * t
     return total
-    
+
 def get_calories(recipe):
     total = 0
     for n in recipe.keys():
@@ -46,7 +44,7 @@ def make_recipe(*args):
     for i, ing in enumerate(prop.keys()):
         recipe[ing] = args[i]
     return recipe
-    
+
 print (make_recipe(25,24,23,22))
 '''
 '''
@@ -57,11 +55,11 @@ for i in range(0,100):
         for k in range(0,100-i-j):
             h = 100-i-j-k
             recipe = make_recipe(i,j,k,h)
-            
+
             calories = get_calories(recipe)
             if (calories != 500):
                 continue
-            
+
             score = get_score(recipe)
 #            score = 0 
 #            a = t[0][0]*i+t[1][0]*j+t[2][0]*k+t[3][0]*h
@@ -79,7 +77,7 @@ for i in range(0,100):
 #            score = a*b*c*d
             if (score > max_score):
                 max_score = score
-                
+
 print(max_score)
 # 18965440 too high
 '''

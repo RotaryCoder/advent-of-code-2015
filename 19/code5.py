@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jan  7 16:08:56 2016
-
-@author: adrian17
-"""
 
 *replacements, mol = open("input.txt").read().splitlines()
 replacements = [tuple(reversed(line.split())) 

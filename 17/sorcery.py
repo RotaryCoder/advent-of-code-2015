@@ -1,12 +1,6 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Dec 18 13:13:16 2015
 
-@author: Dick84
-"""
 from numpy import vectorize
-
-
 
 x = vectorize(int)(list(open('input.txt')))
 c = 0

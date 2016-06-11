@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jan  7 16:41:54 2016
-
-@author: Dick84
-"""
 
 from array import array
 
@@ -15,7 +10,6 @@ GIFTS_CARRIED = 11
 
 goal = goal / 11
 GIFTS_CARRIED = 1
-
 
 def find_house(goal):
     houses = array('I', (0 for i in range(0, int(goal) + 1)))
@@ -33,7 +27,7 @@ def find_house(goal):
                     min_index = index
         elf += 1
     return min_index
-            
+
 print(find_house(goal))
 
 #RESULT: 884520

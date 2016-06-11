@@ -53,7 +53,6 @@ for i, line in enumerate(lines):
     elif dest not in list_of_cities:
         list_of_cities.append(dest)
 
-
 print(shortest_path(distances, list_of_cities ))
 
 assert False, "THIS CODE DOESNT HANDLE EQUALITIES"

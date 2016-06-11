@@ -4,7 +4,7 @@ filename = 'input.txt'
 # filename = 'test_input.txt'
 with open(filename, 'r') as f:
     lines = f.read().splitlines()
-    
+
 mapped = {'b':19138, 'c':0}
 
 def contains_operator(line):
@@ -13,7 +13,7 @@ def contains_operator(line):
         return True
     else:
         return False
-        
+
 def split_parts(line):
     parts = line.split(" -> ")
     left = parts[0]
@@ -26,7 +26,7 @@ def is_evaluable(part):
         return True
     except:
         return False
-    
+
 def find_equivalent_in_input(word):
     for line in lines:
         left, right = split_parts(line)
@@ -49,7 +49,7 @@ def recursive_evaluate(left):
             value = recursive_evaluate(equivalent)
             mapped[identifier] = value
             return int(value)
-    
+
     if re.search("NOT", left):
         assert len(parts) == 2, "not should have 2 lines" + left
         return 0xFFFF ^ recursive_evaluate(parts[1])
@@ -67,19 +67,19 @@ def recursive_evaluate(left):
         shift = int(parts[2])
         # assert shift < 8, left + " shift:" + str(shift)
         return (value << shift) & 0xFFFF
-        
+
     if re.search("AND", left):
         assert len(parts) == 3, "and should have 3 parts" + left
         v0 = recursive_evaluate(parts[0])
         v1 = recursive_evaluate(parts[2])
         return v0 & v1
-        
+
     if re.search("OR", left):
         assert len(parts) == 3, "and should have 3 parts" + left
         v0 = recursive_evaluate(parts[0])
         v1 = recursive_evaluate(parts[2])
         return v0 | v1        
-        
+
     raise ValueError('What is this: ' + left)
 
 # # # # # # # # # # # # # # # # # # # # # # # TEST 

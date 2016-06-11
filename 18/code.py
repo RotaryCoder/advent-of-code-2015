@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Dec 18 10:58:06 2015
-
-@author: Dick84
-"""
 
 with open('input.txt', 'r') as f:
     lines = f.readlines()
@@ -11,7 +6,7 @@ with open('input.txt', 'r') as f:
 table = []
 for line in lines:
     table.append(line.strip())
-    
+
 #table = [
 #'.#.#.#',
 #'...##.',
@@ -24,7 +19,7 @@ def is_on(table, x, y):
     if table[x][y] == '#':
         return True
     return False
-            
+
 def calc_neighbours(table, x, y):
     total = 0
     max_x = len(table[0]) - 1
@@ -56,7 +51,7 @@ def on_or_off(table, x, y):
     if not on and total == 3:
         return True
     return False
-                  
+
 def iter_table(table):
     new_t = []
     for i, line in enumerate(table):
@@ -67,7 +62,7 @@ def iter_table(table):
             else:
                 new_t[i] += '.'
     return new_t
-    
+
 for i in range(100):
     table = iter_table(table)
 

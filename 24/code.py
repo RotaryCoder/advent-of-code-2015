@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Jan  6 11:28:33 2016
-
-@author: Dick84
-"""
 
 from itertools import permutations
 from operator import mul
@@ -18,7 +13,6 @@ packages.reverse()
 total_weight = sum(p)
 individual_weight = total_weight / 3
 #print(indivdual_weight)
-
 
 #print(t)
 #for p in combinations(packages, 4, len(packages)):    
@@ -35,8 +29,6 @@ individual_weight = total_weight / 3
 #    if x > 1:
 #        break
 #     
-
-
 
 def subset_sum(numbers, target, partial=[]):
     s = sum(partial)
@@ -81,7 +73,7 @@ def evaluate_sets(i, j, k):
     evaluate_set(i)
     evaluate_set(j)
     evaluate_set(k)
-    
+
 for i in subset_sum(packages,indivdual_weight):
     i2 = frozenset(i)
     if i2 in d:
@@ -92,10 +84,9 @@ for i in subset_sum(packages,indivdual_weight):
             j2 = frozenset(j)
             k2 = frozenset([x for x in sub if x not in j])
             evaluate_sets(i2, j2, k2)
-            
-                
+
 # 163845007999 too high
-                
+
 # right 11846773891
 
 #    

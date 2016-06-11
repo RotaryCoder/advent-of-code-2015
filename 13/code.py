@@ -1,16 +1,9 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Dec 13 16:20:10 2015
-
-@author: Dick84
-"""
 
 from sys import maxsize as BIG_BIG_NUMBER
 
 with open('input.txt', 'r') as f:
     lines = f.readlines()
-
-
 
 def words_to_int(words2, words3):
     if words2 == 'lose':
@@ -19,7 +12,6 @@ def words_to_int(words2, words3):
         sign = 1
     return sign * int(words3)
 
-    
 def find_lowest_value(lines):
     min_value = BIG_BIG_NUMBER   
     for line in lines:
@@ -83,6 +75,5 @@ print (x + xx)
 
 # not 633
 # not 797, too high
-
 
 #print (lines[0].split(" "))

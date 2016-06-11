@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jan  7 15:32:59 2016
-
-@author: not Dick84
-"""
 
 import re
 

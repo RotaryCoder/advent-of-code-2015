@@ -1,25 +1,20 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Dec 21 21:39:44 2015
 
-@author: Dick84
-"""
 from itertools import combinations
 
 import operator
 import functools
 
-
 t = list(range(1, 5))
 for x in combinations(t, len(t)):
     print(x)
-    
+
 #stuff = [1, 2, 3]
 for L in range(1, len(t)+1):
     for subset in combinations(t, L):
         x = functools.reduce(operator.mul, subset, 1)
         print(subset, x)
-     
+
 total = 0
 
 #62,208,000 too high
@@ -36,13 +31,13 @@ for k in range(1,50):
     i = k
     total = 0
     while total < to_reach:
-        
+
         i *= 2
-            
+
             #    all_values = functools.reduce(operator.add, list(range(0,i)))
             #    if (all_values < to_reach):
             #        continue
-            
+
         total = 0
         for j in range(i, 0, -1):
             if i % j == 0:
@@ -55,12 +50,10 @@ for k in range(1,50):
 #                        print(i, total)
                     #    if i > 10:
                     #        break
-                    
-                        
+
                         #    2685 = too low
     print(k, i, total, factors)
-    
-    
+
 x = list(factors)
 x.sort()
 #print (x)

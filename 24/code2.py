@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Jan  6 14:41:29 2016
-
-@author: Dick84
-"""
 
 from itertools import combinations
 from operator import mul
@@ -37,7 +32,7 @@ for i in range(min_x, len(packages)):
             print(i,p, sum(p))
             break
 min_x = i - 1
-        
+
 min_qe = None
 min_p = None
 for p in combinations(packages, min_x):

@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Dec 13 20:04:36 2015
-
-@author: Dick84
-"""
-
 
 from sys import maxsize as BIG_BIG_NUMBER
 from itertools import permutations
@@ -13,8 +7,6 @@ import numpy as np
 with open('input.txt', 'r') as f:
     lines = f.readlines()
 
-
-
 def words_to_int(words2, words3):
     if words2 == 'lose':
         sign = -1
@@ -22,7 +14,6 @@ def words_to_int(words2, words3):
         sign = 1
     return sign * int(words3)
 
-    
 def find_lowest_value(lines):
     min_value = BIG_BIG_NUMBER   
     for line in lines:
@@ -62,7 +53,6 @@ def calculate_list(happy_dict, people):
         total_happy += happy_dict[person][person_after]
 #        total_happy += happy_dict[person_after][person]
     return total_happy        
-    
 
 #def calculate_sublist(happy_dict, sublist, before, after):
 #    best_i_can_do = 0
@@ -125,7 +115,6 @@ def calculate(happy_dict, people):
 #max_happiness = calculate(happy_dict, people)
 #print (max_happiness)
 
-
 def make_happy_matrix(happy_dict, people):
     matrix = []    
     for i, person_i in enumerate(people):
@@ -140,11 +129,10 @@ def make_happy_matrix(happy_dict, people):
                 )
         matrix.append(row)
     return np.matrix(matrix)
-    
+
 happy_matrix = make_happy_matrix(happy_dict, people)
 happy_matrix -= np.nanmin(happy_matrix)
 print(happy_matrix)
-
 
 def make_happy_dict2(lines):
     arrangments = {}    
@@ -179,7 +167,6 @@ for x in permutations(people):
         print(x)
 print (max_happiness)
 
-
 #sublist = people[:]
 #sublist.remove('Alice')
 #x, y = calculate_sublist(happy_dict, sublist, 'Alice', 'Alice')
@@ -191,6 +178,5 @@ print (max_happiness)
 # not 633
 # not 797, too high
 # not 640, too low
-
 
 #print (lines[0].split(" "))

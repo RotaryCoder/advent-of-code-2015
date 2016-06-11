@@ -22,7 +22,6 @@ def make_longer_string(input):
             consecutive += 1
     result += str(consecutive) + c
     return result
-            
 
 def iterate_many_times(value, times):
     growth = 1.0

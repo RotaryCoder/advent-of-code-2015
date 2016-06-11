@@ -3,7 +3,6 @@ filename = 'input.txt'
 with open(filename, 'r') as f:
     lines = f.read().splitlines()
 
-
 def shortest_path(distances, starting_point, cities_to_visit):
     assert len(cities_to_visit) >= 2, 'Not enough cities to continue'
     if len(cities_to_visit) == 2:
@@ -58,7 +57,6 @@ for i, line in enumerate(lines):
         list_of_cities.append(source)
     elif dest not in list_of_cities:
         list_of_cities.append(dest)
-
 
 print(find_shortest_path_and_city(distances, list_of_cities ))
 

@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jan  7 13:28:41 2016
-
-@author: Dick84
-"""
 
 import re
 
@@ -81,6 +76,5 @@ print(deconstruct(string, t))
 # 205 too low
 # 208 too high
 # 215 too high
-
 
 #print(evaluated)

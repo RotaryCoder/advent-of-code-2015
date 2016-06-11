@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Dec 16 09:57:39 2015
-
-@author: Dick84
-"""
 
 import re
 
@@ -36,7 +31,7 @@ print(r)
 
 with open('input.txt', 'r') as f:
     lines = f.readlines()
-    
+
 def parse_line(line):
     # Sue 500: perfumes: 4, cars: 9, trees: 4
     p1 = r': '
@@ -49,15 +44,14 @@ def parse_line(line):
         assert x != None, 'Error parsing: ' + line
         d[x.group(1)] = int(x.group(2))
     return name, d
-    
+
 d = {}
 for line in lines:
     name, values = parse_line(line)
     d[name] = values
-    
+
 print(list(d.items())[32])
 
-    
 def str_to_dict(s):
     p1 = r', '
     p2 = r': '
@@ -83,7 +77,7 @@ def look_in_line(c):
             found = False
             break
     return found
-  
+
 real_sue = str_to_dict(Sue)
 def do_the_work(lines):
     for line in lines:
@@ -108,8 +102,7 @@ def do_the_work(lines):
         if found:
             yield(n, d)
 
-        
 #    print(d)  
-    
+
 #    for element in line.split():
         

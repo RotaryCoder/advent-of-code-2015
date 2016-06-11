@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Dec 21 17:54:20 2015
-
-@author: Dick84
-"""
 
 import re
 
@@ -31,7 +26,7 @@ for line in lines:
     d[t] = f
 #    except:
 #        break
-    
+
 outputs = set()
 
 total = 0
@@ -46,13 +41,12 @@ def part_1():
             print (r2, c)
             if c != 0:
                 outputs.add(left + r2)
-    
+
 sorted_keys = sorted(d.keys(), key=lambda x : len(x), reverse=True)
 #print(sorted_keys)
 
-
 def part_2_2(substring):
-    
+
     for i, c in enumerate(substring):
         left = substring[:i]
         right = substring[i:]
@@ -62,16 +56,12 @@ def part_2_2(substring):
         if i1 == None or i2 == None:
             return None
         return i1 + i2
-    
-
-
-
 
 levels = set()
 def part_2(substring, level):
     print('doing {0}'.format(substring))
 #    a = input()
-    
+
     if substring.strip() == 'e':
         print('VICTOIRE {0}'.format(level))
         levels.add(level)
@@ -100,10 +90,10 @@ def part_2(substring, level):
 #                r2 = re.sub(t, f, right, 1)
 #                print('{0} is now {1}'.format(substring, left + r2))
 #                print (left, r2)
-                
+
                 b = part_2(left + r2, level + 1)
     return None
-    
+
 xx = part_2(begin_str, 0)
 #for x in xx:
 #    if x != 9999999:

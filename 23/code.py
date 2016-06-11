@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Jan  5 15:22:54 2016
-
-@author: Dick84
-"""
 
 import re
 import logging
@@ -44,7 +39,7 @@ def execute(instruction):
             parts[0], parts[1].strip(','), parts[2] )        
     logger.info(s)
     exec(s)
-    
+
 def inc(r):
     registers[r] += 1
     move_next()
@@ -56,7 +51,7 @@ def hlf(r):
 def tpl(r):
     registers[r] *= 3
     move_next()
-    
+
 def jio(x, y):
     global index
     if registers[x] ==1:
@@ -70,11 +65,11 @@ def jie(x, y):
         index += int(y)
     else:
         move_next()
-        
+
 def move_next():
     global index
     index += 1
-    
+
 def jmp(x):
     global index
     index += int(x)

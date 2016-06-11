@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Dec 17 10:06:50 2015
-
-@author: Dick84
-"""
 
 import re
 from itertools import permutations
@@ -27,7 +22,7 @@ min_l = 9999999
 
 def get_min_l():
     return min_l
-    
+
 def func(d, l, prev):
 #     min_l
     assert d > 0
@@ -53,11 +48,11 @@ def func(d, l, prev):
         total += func(d - value, l2, p)
     total += func(d, l2, prev)
     return total
-    
+
 print(func(desired, x, []))
 
 # 4372
-        
+
 #func = sous liste qui exclue + sous-liste qui inclus
 
 '''
@@ -78,9 +73,8 @@ def sub_list(toreach, l):
             if e == True:
                 total_v +=v
     return v > 0, v
-        
-#print (sub_list(20, x))
 
+#print (sub_list(20, x))
 
 #print(factorial(len(x)))
 for i, y in enumerate(permutations(x), 1):
@@ -98,7 +92,7 @@ for i, y in enumerate(permutations(x), 1):
             break
         if total > desired:            
             break
-        
+
 print(possible)
-        
+
 '''

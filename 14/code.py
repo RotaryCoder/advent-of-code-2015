@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Dec 14 10:59:37 2015
 
-@author: Dick84
-"""
 from collections import namedtuple, defaultdict
 with open('input.txt', 'r') as f:
     lines = f.readlines()
@@ -34,7 +30,6 @@ def calculate_all(time):
         distance = calculate(deer, time)
         yield distance
 
-
 def new_function(time):
     in_advance = defaultdict(int)
     for i in range(time):
@@ -50,7 +45,6 @@ def new_function(time):
         for deer in winning_deers:
             in_advance[deer] += 1
     return in_advance
-            
 
 print(max(calculate_all(2503)))
 #    break

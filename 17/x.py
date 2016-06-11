@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Dec 18 13:38:06 2015
-
-@author: Dick84
-"""
 
 import itertools
 import collections

@@ -2,7 +2,6 @@ import sys
 from sys import stdout
 # from stdout import write
 
-
 def HowMuchPaper(sides):
   min1 = min(sides)
   index = sides.index(min1)
@@ -16,7 +15,7 @@ def HowMuchPaper(sides):
   total = area + min1 * min2
   # print str(sides) + " : " + str(total)
   return total
-  
+
 def HowMuchRibbon(sides):
   min1 = min(sides)
   index = sides.index(min1)
@@ -29,7 +28,6 @@ def HowMuchRibbon(sides):
               # reduce(lambda x, y: x*y, sides)
   # print str(sides) + " : " + str(total)
   return total
-  
 
 HowMuchPaper([2, 3, 4])  
 HowMuchPaper([1, 1, 10])
@@ -42,6 +40,6 @@ with open('input.txt') as f:
     sides = map(int, sides)
     TotalPaper += HowMuchPaper(sides)
     TotalRibbon += HowMuchRibbon(sides)
-    
+
 print "Paper:  " + str(TotalPaper)
 print "Ribbon: " + str(TotalRibbon)

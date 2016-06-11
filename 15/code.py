@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Dec 15 11:58:14 2015
 
-@author: Dick84
-"""
 from collections import namedtuple, defaultdict
 import sys
 
@@ -25,7 +21,7 @@ for line in lines:
 #    k = int(values[4].split()[1])
     properties[name] = Values(c, d, f, t) #, k)
     print(name)
-    
+
 #print(properties)
 
 def get_score(recipe):
@@ -47,7 +43,7 @@ def get_ingredients_used(recipe):
     for i in recipe.values():
         total += i
     return total
-    
+
 def find_least_enjoyable(recipe):
     min_score = 99999999999999
     min_ingredient = None
@@ -62,7 +58,7 @@ def find_least_enjoyable(recipe):
             min_ingredient = n
         r[n] += 1
     return min_ingredient
-            
+
 def find_most_enjoyable(recipe):
     max_score = -999999999
     max_ingredient = None
@@ -77,14 +73,13 @@ def find_most_enjoyable(recipe):
     assert max_ingredient != None, r
     return max_ingredient
 
-
 r = defaultdict(int)
 for name in properties.keys():
     r[name] = 100
 while get_ingredients_used(r) > 100:
     n = find_least_enjoyable(r)
     r[n] -= 1
-    
+
 print(r)
 print(get_score(r))
 #
@@ -103,7 +98,6 @@ print(get_score(r))
 #for i in range(1):
 #    for n in recipe.keys():
 #        r = recip
-        
+
 #for i :
-    
-    
+

@@ -4,13 +4,13 @@ filename = 'input.txt'
 # filename = 'test_input.txt'
 with open(filename, 'r') as f:
     lines = f.read().splitlines()
-    
+
     # # # # # # # # # # # # # # TEST
 val_map = { "":(2,0), 
             "abc":(5,3), 
             "aaa\"aaa":(10,7), 
             "\x27":(6,1) }
-            
+
 enc_map = { "":(6), 
             "abc":(9), 
             "aaa\"aaa":(16), 
@@ -19,7 +19,7 @@ enc_map = { "":(6),
 map = {}    
 count_1 = 0
 count_2 = 0
-    
+
 for line in lines:
     map[line] = (len(line), len(ast.literal_eval(line)))
     repres = repr(line)
@@ -27,5 +27,5 @@ for line in lines:
     # print(line + " "*(12-len(line)) + str(size2))
     count_1 += (len(line) - len(ast.literal_eval(line)))
     count_2 += size_2 - len(line) 
-    
+
 print count_1, count_2
